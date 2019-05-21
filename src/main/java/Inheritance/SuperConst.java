@@ -20,6 +20,9 @@ class B extends A {
 }
 
 class C extends B {
+	C () {
+		System.out.println("This is C default constructor");
+	}
 	C(int c) {
 		//super(c);
 		System.out.println("This is C parameter constructor");
@@ -29,7 +32,6 @@ class C extends B {
 public class SuperConst {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		C myCObj = new C(2);
 
 	}
