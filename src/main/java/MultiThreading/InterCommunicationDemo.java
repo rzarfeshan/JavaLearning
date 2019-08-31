@@ -39,7 +39,7 @@ class Consumer implements Runnable {
 	
 	Consumer(Q qObj) {
 		q = qObj;
-		t = new Thread(this, "Comsumer");
+		t = new Thread(this, "Consumer");
 	}
 	
 	public void run() {
