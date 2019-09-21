@@ -1,5 +1,7 @@
 package Basics;
 
+import javax.management.RuntimeErrorException;
+
 public class HelloWorld {
 public static final String SLIDES = "Slides";
 	
@@ -33,6 +35,22 @@ private static int poistiveCheck(int x, int y) {
 			System.out.println("Both are unequal");
 		}
 
+		int i1 =1; 
+		int i2=2;
+		boolean b1 = true;
+		boolean b2 = false;
+		System.out.println(i1&i2);
+		System.out.println((i1|i2) == 3);
+		System.out.println((i1^i2) < 4);
+		System.out.println(b1 | !b2);
+		
+		StringBuilder sb = new StringBuilder("Hello");
+		sb.append(" ").deleteCharAt(0).insert(0,"H").append("Waorld!");
+		System.out.println(sb);
+		System.out.println(print());
+	}
+	static Exception print() {
+		return new Exception();
 	}
 
 }

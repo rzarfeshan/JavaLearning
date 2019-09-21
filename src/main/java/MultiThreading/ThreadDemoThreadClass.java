@@ -1,10 +1,11 @@
 package MultiThreading;
 
-class NewThread implements Runnable {
+class NewThread extends Thread {
 	Thread t;
-	NewThread() {
-		t = new Thread(this, "NewThread");
-		System.out.println("Child thread created - " +t);
+	NewThread(String name) {
+		super(name);
+//		t = new Thread(this, "NewThread");
+		System.out.println("Child thread created - " +this);
 	}
 	
 	public void run() {
@@ -16,14 +17,18 @@ class NewThread implements Runnable {
 		} catch (InterruptedException e) {
 			System.out.println("InterruptedException handled");
 		}
-		System.out.println("Exiting Child thread" + t);
+		System.out.println("Exiting Child thread" + this);
 	}
 }
 public class ThreadDemoThreadClass {
 
 	public static void main(String[] args) {
-		NewThread nt = new NewThread();
-		nt.t.start();
+		NewThread nt1 = new NewThread("One");
+		NewThread nt2 = new NewThread("Two");
+		NewThread nt3 = new NewThread("Three");
+		nt1.start();
+		nt2.start();
+		nt3.start();
 		
 		try {
 			for (int i = 0; i < 5; i++) {

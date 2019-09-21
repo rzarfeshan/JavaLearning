@@ -5,11 +5,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 //import java.io.OutputStreamWriter;
+class TestA {
+	protected int x, y;
+}
 
-class A {int x = 5;}
-class B extends A {int y = 10;}
+class A {int x = 5;
+void print() {
+	System.out.println("I am in A");
+	}
+}
+class B extends A {
+	int y = 10;
+void printB() {
+	System.out.println("I am in B");
+}
+}
+
 public class Test {
-	
 	public static void readString() {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		String[] str = new String[5];
@@ -31,15 +43,12 @@ public class Test {
 			}
 		}
 		catch (IOException e) {
-			
 		}
-		
-		
 	}
-
 	public static void main(String[] args) {
-//		A a = new B();
-//		System.out.println(a.x);
+		TestA a = new TestA();
+		System.out.println("Protect " + a.x + " " + a.y );
+		
 		//readString();
 		
 //		Scanner Obj = new Scanner(System.in);
@@ -48,12 +57,34 @@ public class Test {
 //		int length = Obj.nextInt();
 //		System.out.println(str.substring(startINdex, length+1));
 		
-		Scanner scanObj = new Scanner(System.in);
-		String str1 = scanObj.nextLine();
-		String str2 = scanObj.nextLine();
+//		Scanner scanObj = new Scanner(System.in);
+//		String str1 = scanObj.nextLine();
+//		String str2 = scanObj.nextLine();
+//		
+//		System.out.println(str1.trim().concat(str2.trim()).trim());
+//		scanObj.close();
 		
-		System.out.println(str1.trim().concat(str2.trim()).trim());
-		scanObj.close();
+//		StringBuffer str = new StringBuffer("polls tests");
+//		str.insert(6, "Good ");
+//		System.out.println(str);
+//		
+//		Object myObj = new String[] {"one", "two"};
+//		for(String s: (String[])myObj) {
+//			System.out.print(s+".");
+//		}
+		
+		Scanner scan = new Scanner(System.in);
+		String str = scan.nextLine();
+		String c = scan.next();
+		
+		if (str.contains(c.trim()))
+		{
+			System.out.println("Yes");
+		}
+		else
+		{
+			System.out.println("No");
+		}
 	}
 
 }
